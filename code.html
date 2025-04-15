@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaney Kanban 2000</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="kanban-board">
+        <h1>~* Zaney Kanban 2000 *~</h1>
+
+        <div class="controls">
+            <input type="text" id="new-task-input" placeholder="Enter new task...">
+            <button id="add-task-btn" class="action-button">Add Task!</button>
+        </div>
+
+        <div class="columns-container">
+            <div class="column" id="todo" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                <h2 class="column-title todo-title">To Do</h2>
+                <div class="tasks">
+                    <!-- Tasks will be added here -->
+                </div>
+            </div>
+
+            <div class="column" id="inprogress" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                <h2 class="column-title inprogress-title">In Progress</h2>
+                <div class="tasks">
+                    <!-- Tasks will be added here -->
+                </div>
+            </div>
+
+            <div class="column" id="done" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="dragEnter(event)" ondragleave="dragLeave(event)">
+                <h2 class="column-title done-title">Done!</h2>
+                <div class="tasks">
+                    <!-- Tasks will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADHD Focus Mode Overlay -->
+    <div id="focus-overlay" class="focus-overlay" style="display: none;">
+        <div class="focus-background"></div>
+        <div class="focus-task-container">
+            <h3 id="focus-task-title">Task Title</h3>
+            <p id="focus-task-desc">Task description would go here if we added it.</p>
+            <div class="focus-controls">
+                <button id="focus-complete-btn" class="focus-button complete">Complete Task</button>
+                <button id="focus-next-btn" class="focus-button next">Next Task</button>
+                <button id="focus-back-btn" class="focus-button back">Zoom Out</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
